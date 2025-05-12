@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML -->
+<html lang="en">
+<!-- Root element with language attribute for accessibility and SEO
+     Alternative: Use other language codes like "fr", "es" based on content language -->
+
+<head>
+    <!-- Contains meta information, title, and links to external resources -->
+    <meta charset="UTF-8">
+    <!-- Specifies character encoding for the document
+         Alternative: "ISO-8859-1" for older systems, but UTF-8 is recommended for universal character support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Controls viewport settings for responsive design
+         Alternative: Add "user-scalable=no" to prevent zooming, but this reduces accessibility -->
+    <title>Document</title>
+    <!-- Sets the page title shown in browser tabs and bookmarks
+         Better practice: Use a descriptive title like "Scientific Calculator" -->
+    <link rel="stylesheet" href="./Style.css">
+    <!-- Links to external CSS file
+         Alternative: Use preload for critical CSS: <link rel="preload" href="critical.css" as="style"> -->
+    <style>
+        /* Internal CSS styles - better practice would be to move all these to the external Style.css file */
+        h1,
+        h2 {
+            color: #005A9C;
+            /* Sets heading color to blue
+               Alternative for responsive: Use CSS variables for consistent theming */
+        }
+
+        table {
+            width: 100%;
+            /* Makes table fill its container
+               Alternative for responsive: Use max-width with overflow-x: auto for mobile devices */
+            border-collapse: collapse;
+            /* Collapses borders between table cells
+               Alternative: "separate" with border-spacing for different styling */
+            margin-bottom: 25px;
+            /* Adds space below tables
+               Alternative for responsive: Use relative units like rem */
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            /* Adds light gray border to table cells
+               Alternative: Use border-bottom only for a cleaner look */
+            padding: 8px;
+            /* Adds internal spacing in cells
+               Alternative for responsive: Use relative units like em */
+            text-align: left;
+            /* Aligns text to the left
+               Alternative: center, right, justify for different layouts */
+        }
+
+        th {
+            background-color: #e0e0e0;
+            /* Sets light gray background for table headers
+               Alternative: Use subtle gradients or different colors for better visual hierarchy */
+        }
+
+        .section {
+            margin-top: 30px;
+            /* Adds space above each section
+               Alternative for responsive: Use relative units like rem */
+        }
+
+        #helpText {
+            border-radius: 4vh;
+            /* Rounds corners using viewport height units
+              Alternative for responsive: Use rem units for consistent rounding */
+            margin-top: 25vh;
+            /* Adds space above help text using viewport height
+              Alternative for responsive: Use percentage or rem units */
+            margin-left: 100px;
+            /* Adds space to the left using pixels
+              Alternative for responsive: Use percentage or rem units */
+            width: 40vw;
+            /* Sets width to 40% of viewport width
+              Alternative for responsive: Use max-width with percentage */
+            height: 70vh;
+            /* Sets height to 70% of viewport height
+              Alternative for responsive: Use min-height with auto */
+            overflow-y: auto;
+            /* Enables vertical scrolling when content overflows
+              Alternative: visible, hidden, scroll based on needs */
+            scrollbar-width: none;
+            /* Hides scrollbar in Firefox
+              Alternative: thin, auto for different scrollbar styles */
+            overflow-wrap: break-word;
+            /* Breaks long words to prevent overflow
+              Alternative: normal, anywhere for different word breaking behavior */
+            padding: 1rem;
+            /* Adds internal spacing using root em units
+              Alternative: Use em or percentage for different scaling behavior */
+            position: relative;
+            /* Positions element relative to its normal position
+              Alternative: absolute, fixed, sticky for different positioning needs */
+            bottom: 10vh;
+            /* Moves element up by 10% of viewport height
+              Alternative for responsive: Use rem units */
+            display: none;
+            /* Hides the element initially
+              Alternative: Use visibility: hidden to preserve space */
+            background-image: url(../../back3.jpeg);
+            /* Sets background image
+              Alternative for responsive: Use media queries to change image on different screens */
+            background-repeat: no-repeat;
+            /* Prevents background image from repeating
+              Alternative: repeat, repeat-x, repeat-y for different patterns */
+            background-size: cover;
+            /* Scales background image to cover the entire element
+              Alternative: contain, specific dimensions for different scaling */
+        }
+    </style>
+    <!-- Include Font Awesome CDN -->
+    <!-- External resource for icons
+         Better practice: Consider self-hosting critical icons or using SVG directly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Main content container -->
+
+    <div id="helpText">
+        <!-- Help section container - hidden by default
+             Accessibility improvement: Add aria-labelledby to associate with a heading -->
+        <h1>🆘 Scientific Calculator Help Guide</h1>
+        <!-- Main heading with emoji
+             Accessibility consideration: Screen readers will read the emoji, ensure it adds value -->
+        <p>Welcome to the <strong>Scientific Calculator Help Section</strong>. This guide explains the functions of each
+            button and how to use them effectively for various types of calculations.</p>
+        <!-- Introductory paragraph with emphasized text -->
+
+        <div class="section">
+            <!-- Section container for basic operations
+                 Accessibility improvement: Add aria-labelledby to associate with heading -->
+            <h2>🔢 Basic Operations</h2>
+            <!-- Section heading with emoji -->
+            <table>
+                <!-- Table for organizing button information
+                     Accessibility improvement: Add caption and scope attributes -->
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <!-- Table header row -->
+                <tr>
+                    <td>0-9</td>
+                    <td>Digits for number input</td>
+                </tr>
+                <!-- Table data rows for each button and its function -->
+                <tr>
+                    <td>+</td>
+                    <td>Addition</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Subtraction</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplication</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Division</td>
+                </tr>
+                <tr>
+                    <td>=</td>
+                    <td>Computes the result</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>Decimal point</td>
+                </tr>
+                <tr>
+                    <td>+/-</td>
+                    <td>Toggle positive/negative sign</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Percentage</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for memory functions -->
+            <h2>📚 Memory Functions</h2>
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>MC</td>
+                    <td>Memory Clear</td>
+                </tr>
+                <tr>
+                    <td>MR</td>
+                    <td>Memory Recall</td>
+                </tr>
+                <tr>
+                    <td>MS</td>
+                    <td>Memory Store (stores displayed value)</td>
+                </tr>
+                <tr>
+                    <td>M+</td>
+                    <td>Adds current display value to memory</td>
+                </tr>
+                <tr>
+                    <td>M-</td>
+                    <td>Subtracts current display value from memory</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for editing functions -->
+            <h2>🔄 Editing</h2>
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>← (Backspace)</td>
+                    <td>Deletes the last character entered</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Clears the current entry</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for mode selection -->
+            <h2>📐 Mode Selection</h2>
+            <table>
+                <tr>
+                    <th>Option</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>Deg</td>
+                    <td>Degrees for angle inputs</td>
+                </tr>
+                <tr>
+                    <td>Rad</td>
+                    <td>Radians for angle inputs</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for scientific functions -->
+            <h2>🔬 Scientific Functions</h2>
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>mod</td>
+                    <td>Modulo operation (remainder)</td>
+                </tr>
+                <tr>
+                    <td>π</td>
+                    <td>Inserts Pi (π ≈ 3.14159)</td>
+                </tr>
+                <tr>
+                    <td>e</td>
+                    <td>Euler's number (e ≈ 2.71828)</td>
+                </tr>
+                <tr>
+                    <td>n!</td>
+                    <td>Factorial</td>
+                </tr>
+                <tr>
+                    <td>Exp</td>
+                    <td>Exponent notation (e.g., 3Exp4 = 3×10⁴)</td>
+                </tr>
+                <tr>
+                    <td>10ˣ</td>
+                    <td>10 raised to the power of x</td>
+                </tr>
+                <tr>
+                    <td>ex</td>
+                    <td>e raised to the power of x</td>
+                </tr>
+                <tr>
+                    <td>log</td>
+                    <td>Logarithm base 10</td>
+                </tr>
+                <tr>
+                    <td>ln</td>
+                    <td>Natural logarithm (base e)</td>
+                </tr>
+                <tr>
+                    <td>log2x</td>
+                    <td>Logarithm base 2</td>
+                </tr>
+                <tr>
+                    <td>logyx</td>
+                    <td>Logarithm of x base y</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for trigonometric functions -->
+            <h2>🧮 Trigonometric Functions</h2>
+            <h3>Standard:</h3>
+            <!-- Subheading for standard trigonometric functions -->
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>sin</td>
+                    <td>Sine</td>
+                </tr>
+                <tr>
+                    <td>cos</td>
+                    <td>Cosine</td>
+                </tr>
+                <tr>
+                    <td>tan</td>
+                    <td>Tangent</td>
+                </tr>
+            </table>
+
+            <h3>Hyperbolic:</h3>
+            <!-- Subheading for hyperbolic functions -->
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>sinh</td>
+                    <td>Hyperbolic sine</td>
+                </tr>
+                <tr>
+                    <td>cosh</td>
+                    <td>Hyperbolic cosine</td>
+                </tr>
+                <tr>
+                    <td>tanh</td>
+                    <td>Hyperbolic tangent</td>
+                </tr>
+            </table>
+
+            <h3>Inverse:</h3>
+            <!-- Subheading for inverse trigonometric functions -->
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>sin⁻¹</td>
+                    <td>Inverse sine (arcsin)</td>
+                </tr>
+                <tr>
+                    <td>cos⁻¹</td>
+                    <td>Inverse cosine (arccos)</td>
+                </tr>
+                <tr>
+                    <td>tan⁻¹</td>
+                    <td>Inverse tangent (arctan)</td>
+                </tr>
+                <tr>
+                    <td>sinh⁻¹</td>
+                    <td>Inverse hyperbolic sine</td>
+                </tr>
+                <tr>
+                    <td>cosh⁻¹</td>
+                    <td>Inverse hyperbolic cosine</td>
+                </tr>
+                <tr>
+                    <td>tanh⁻¹</td>
+                    <td>Inverse hyperbolic tangent</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for advanced math functions -->
+            <h2>🧠 Advanced Math Functions</h2>
+            <table>
+                <tr>
+                    <th>Button</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td>1/x</td>
+                    <td>Reciprocal (1 divided by x)</td>
+                </tr>
+                <tr>
+                    <td>( )</td>
+                    <td>Parentheses for grouping expressions</td>
+                </tr>
+                <tr>
+                    <td>Xʸ</td>
+                    <td>x raised to the power y</td>
+                </tr>
+                <tr>
+                    <td>X²</td>
+                    <td>x squared</td>
+                </tr>
+                <tr>
+                    <td>X³</td>
+                    <td>x cubed</td>
+                </tr>
+                <tr>
+                    <td>y√x</td>
+                    <td>y-th root of x</td>
+                </tr>
+                <tr>
+                    <td>∛</td>
+                    <td>Cube root</td>
+                </tr>
+                <tr>
+                    <td>√</td>
+                    <td>Square root</td>
+                </tr>
+                <tr>
+                    <td>|x|</td>
+                    <td>Absolute value</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <!-- Section container for interface elements -->
+            <h2>🖼 Interface Elements</h2>
+            <ul>
+                <!-- Unordered list for interface elements
+                     Accessibility improvement: Add role="list" for screen reader compatibility -->
+                <li><strong>Top Input Bar</strong>: Displays the expression being entered.</li>
+                <li><strong>Result Display</strong>: Shows the result of computations.</li>
+                <li><strong>Help Button</strong>: Displays this help section.</li>
+            </ul>
+        </div>
+    </div>
+
+    <button id="back">Back</button>
+    <!-- Back button to return from help section
+         Accessibility improvement: Add aria-label="Return to calculator" -->
+
+    <div class="container">
+        <!-- Main calculator container
+             Accessibility improvement: Add role="application" and aria-label="Scientific Calculator" -->
+        <div class="box box1">
+            <!-- Header box for calculator title and controls -->
+            <div id="Science">Scientific Calculator</div>
+            <!-- Calculator title
+                 Accessibility improvement: Use h1 instead of div for semantic structure -->
+            <div class="help">
+                <!-- Help section container -->
+                <div class="help_child">Help</div>
+                <!-- Help button
+                     Accessibility improvement: Use button element instead of div -->
+                <div id="minimise">
+                    <!-- Minimize button
+                         Accessibility improvement: Use button element with aria-label -->
+                    <i class="fas fa-copy"></i>
+                    <!-- Font Awesome icon for minimize
+                         Accessibility improvement: Add aria-hidden="true" -->
+                </div>
+                <div id="cut">&times;</div>
+                <!-- Close button
+                     Accessibility improvement: Use button element with aria-label="Close calculator" -->
+            </div>
+        </div>
+
+        <div class="box box2">
+            <!-- Container for expression input field -->
+            <input type="text" size="98" style="text-align: right;" readonly id="input1">
+            <!-- Expression input field
+                 Accessibility improvement: Add aria-label="Expression input"
+                 Better practice: Move inline styles to CSS file
+                 Alternative for responsive: Remove size attribute and use CSS width:100% -->
+        </div>
+
+        <div class="box box3">
+            <!-- Container for result display field -->
+            <input type="text" size="100" style="text-align: right;" readonly id="input2">
+            <!-- Result display field
+                 Accessibility improvement: Add aria-label="Calculation result"
+                 Better practice: Move inline styles to CSS file
+                 Alternative for responsive: Remove size attribute and use CSS width:100% -->
+        </div>
+
+        <div class="box box4" id="mod">mod</div>
+        <!-- Modulo operation button
+             Accessibility improvement: Use button element with role="button" -->
+        <div class="box inputbox">
+            <!-- Container for degree/radian radio button -->
+            <input type="radio" checked name="inp" value="Deg">
+            <!-- Radio button for degree mode
+                 Accessibility improvement: Add id and associate with label using for attribute -->
+            <span>Deg</span>
+            <!-- Label text for degree mode
+                 Accessibility improvement: Use label element instead of span -->
+        </div>
+
+        <!-- Commented out radio button for radian mode
+        <div class="box inputbox">
+            <input type="radio" name="inp" value="Red">
+            <span>Rad</span>
+        </div> -->
+
+        <!-- Memory function buttons -->
+        <div class="box box5" id="MC">MC</div>
+        <!-- Memory Clear button
+             Accessibility improvement: Use button element with aria-label="Memory Clear" -->
+        <div class="box box6" id="MR">MR</div>
+        <!-- Memory Recall button
+             Accessibility improvement: Use button element with aria-label="Memory Recall" -->
+        <div class="box box7" id="MS">MS</div>
+        <!-- Memory Store button
+             Accessibility improvement: Use button element with aria-label="Memory Store" -->
+        <div class="box box8" id="M+">M+</div>
+        <!-- Memory Add button
+             Accessibility improvement: Use button element with aria-label="Memory Add" -->
+        <div class="box box9" id="M-">M-</div>
+        <!-- Memory Subtract button
+             Accessibility improvement: Use button element with aria-label="Memory Subtract" -->
+
+        <!-- Hyperbolic function buttons -->
+        <div class="box box10" id="sinh">sinh</div>
+        <!-- Hyperbolic sine button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box11" id="cosh">cosh</div>
+        <!-- Hyperbolic cosine button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box12" id="tanh">tanh</div>
+        <!-- Hyperbolic tangent button
+             Accessibility improvement: Use button element with aria-label -->
+
+        <!-- Other function buttons -->
+        <div class="box box13" id="Exp">Exp</div>
+        <!-- Exponent button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box14" id="openParenthesis">(</div>
+        <!-- Open parenthesis button
+             Accessibility improvement: Use button element with aria-label="Open Parenthesis" -->
+        <div class="box box15" id="closeParenthesis">)</div>
+        <!-- Close parenthesis button
+             Accessibility improvement: Use button element with aria-label="Close Parenthesis" -->
+
+        <!-- Editing buttons -->
+        <div class="box box16" id="lastCharDelete">&#8592;</div>
+        <!-- Backspace button
+             Accessibility improvement: Use button element with aria-label="Backspace" -->
+        <div class="box box17" id="clearComplete">C</div>
+        <!-- Clear button
+             Accessibility improvement: Use button element with aria-label="Clear All" -->
+        <div class="box box18">+/-</div>
+        <!-- Toggle sign button
+             Accessibility improvement: Use button element with aria-label="Toggle Sign" and add id -->
+
+        <!-- More function buttons -->
+        <div class="box box19" id="sqrt">&radic;</div>
+        <!-- Square root button
+             Accessibility improvement: Use button element with aria-label="Square Root" -->
+        <div class="box box20" id="sinh-1">
+            sinh<sup>-1</sup>
+        </div>
+        <!-- Inverse hyperbolic sine button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box21" id="cosh-1">
+            cosh<sup>-1</sup>
+        </div>
+        <!-- Inverse hyperbolic cosine button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box22" id="tanh-1">
+            tanh<sup>-1</sup>
+        </div>
+        <!-- Inverse hyperbolic tangent button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box23" id="log2">
+            log<sub>2</sub>x
+        </div>
+        <!-- Log base 2 button
+             Accessibility improvement: Use button element with aria-label and add id -->
+        <div class="box box24" id="ln">ln</div>
+        <!-- Natural logarithm button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box25" id="log">log</div>
+        <!-- Logarithm base 10 button
+             Accessibility improvement: Use button element with aria-label -->
+
+        <!-- Number buttons -->
+        <div class="box box26" id="seven">7</div>
+        <!-- Number 7 button
+             Accessibility improvement: Use button element with aria-label="7" -->
+        <div class="box box27" id="eight">8</div>
+        <!-- Number 8 button
+             Accessibility improvement: Use button element with aria-label="8" -->
+        <div class="box box28" id="nine">9</div>
+        <!-- Number 9 button
+             Accessibility improvement: Use button element with aria-label="9" -->
+
+        <!-- Operation buttons -->
+        <div class="box box29" id="div">/</div>
+        <!-- Division button
+             Accessibility improvement: Use button element with aria-label="Divide" -->
+        <div class="box box30" id="rem">%</div>
+        <!-- Percentage button
+             Accessibility improvement: Use button element with aria-label="Percent" -->
+
+        <!-- Constant buttons -->
+        <div class="box box31" id="pi">&pi;</div>
+        <!-- Pi button
+             Accessibility improvement: Use button element with aria-label="Pi" -->
+        <div class="box box32" id="EulerNumber">e</div>
+        <!-- Euler's number button
+             Accessibility improvement: Use button element with aria-label="Euler's Number" -->
+
+        <!-- More function buttons -->
+        <div class="box box33" id="fact">n!</div>
+        <!-- Factorial button
+             Accessibility improvement: Use button element with aria-label="Factorial" -->
+        <div class="box box34" id="logy">
+            log<sub>y</sub>x
+        </div>
+        <!-- Log base y button
+             Accessibility improvement: Use button element with aria-label and add id -->
+        <div class="box box35" id="eulerPower">
+            e<sup>x</sup>
+        </div>
+        <!-- e raised to power x button
+             Accessibility improvement: Use button element with aria-label -->
+        <div class="box box36" id="tenPower">
+            10<sup>x</sup>
+        </div>
+        <!-- 10 raised to power x button
+             Accessibility improvement: Use button element with aria-label -->
+
+        <!-- More number buttons -->
+        <div class="box box37" id="fourth">4</div>
+        <!-- Number 4 button
+             Accessibility improvement: Use button element with aria-label="4" -->
+        <div class="box box38" id="five">5</div>
+        <!-- Number 5 button
+             Accessibility improvement: Use button element with aria-label="5" -->
+        <div class="box box39" id="six">6</div>
+        <!-- Number 6 button
+             Accessibility improvement: Use button element with aria-label="6" -->
+
+        <!-- More operation buttons -->
+        <div class="box box40" id="mul">*</div>
+        <!-- Multiplication button
+             Accessibility improvement: Use button element with aria-label="Multiply" -->
+        <div class="box box41" id="reverse">1/x</div>
+        <!-- Reciprocal button
+             Accessibility improvement: Use button element with aria-label="Reciprocal" -->
+
+        <!-- Trigonometric function buttons -->
+        <div class="box box42" id="sin">sin</div>
+        <!-- Sine button
+             Accessibility improvement: Use button element with aria-label="Sine" -->
+        <div class="box box43" id="cos">cos</div>
+        <!-- Cosine button
+             Accessibility improvement: Use button element with aria-label="Cosine" -->
+        <div class="box box44" id="tan">tan</div>
+        <!-- Tangent button
+             Accessibility improvement: Use button element with aria-label="Tangent" -->
+
+        <!-- Power and root buttons -->
+        <div class="box box45" id="power">
+            X<sup>y</sup>
+        </div>
+        <!-- x raised to power y button
+             Accessibility improvement: Use button element with aria-label="x to the power of y" -->
+        <div class="box box46" id="cube">
+            X<sup>3</sup>
+        </div>
+        <!-- x cubed button
+             Accessibility improvement: Use button element with aria-label="x cubed" -->
+        <div class="box box47" id="square">
+            X<sup>2</sup>
+        </div>
+        <!-- x squared button
+             Accessibility improvement: Use button element with aria-label="x squared" -->
+
+        <!-- More number buttons -->
+        <div class="box box48" id="one">1</div>
+        <!-- Number 1 button
+             Accessibility improvement: Use button element with aria-label="1" -->
+        <div class="box box49" id="two">2</div>
+        <!-- Number 2 button
+             Accessibility improvement: Use button element with aria-label="2" -->
+        <div class="box box50" id="three">3</div>
+        <!-- Number 3 button
+             Accessibility improvement: Use button element with aria-label="3" -->
+
+        <!-- More operation buttons -->
+        <div class="box box51" id="sub">-</div>
+        <!-- Subtraction button
+             Accessibility improvement: Use button element with aria-label="Subtract" -->
+        <div class="box box52" id="ans">=</div>
+        <!-- Equals button
+             Accessibility improvement: Use button element with aria-label="Equals" -->
+
+        <!-- Inverse trigonometric function buttons -->
+        <div class="box box53" id="sin-1">
+            sin<sup>-1</sup>
+        </div>
+        <!-- Inverse sine button
+             Accessibility improvement: Use button element with aria-label="Inverse Sine" -->
+        <div class="box box54" id="cos-1">
+            cos<sup>-1</sup>
+        </div>
+        <!-- Inverse cosine button
+             Accessibility improvement: Use button element with aria-label="Inverse Cosine" -->
+        <div class="box box55" id="tan-1">
+            tan<sup>-1</sup>
+        </div>
+        <!-- Inverse tangent button
+             Accessibility improvement: Use button element with aria-label="Inverse Tangent" -->
+
+        <!-- More function buttons -->
+        <div class="box box56" id="VariablePower">
+            <sup>y</sup>&radic;X
+        </div>
+        <!-- y-th root of x button
+             Accessibility improvement: Use button element with aria-label="y-th root of x" -->
+        <div class="box box57" id="cbroot">
+            &#8731;
+        </div>
+        <!-- Cube root button
+             Accessibility improvement: Use button element with aria-label="Cube Root" -->
+        <div class="box box58" id="abs">|x|</div>
+        <!-- Absolute value button
+             Accessibility improvement: Use button element with aria-label="Absolute Value" -->
+
+        <!-- Final row of buttons -->
+        <div class="box box59" id="zero">0</div>
+        <!-- Number 0 button
+             Accessibility improvement: Use button element with aria-label="0" -->
+        <div class="box box60" id="decimal">.</div>
+        <!-- Decimal point button
+             Accessibility improvement: Use button element with aria-label="Decimal Point" -->
+        <div class="box box61" id="add">+</div>
+        <!-- Addition button
+             Accessibility improvement: Use button element with aria-label="Add" -->
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="./First.js"></script>
+    <!-- Main JavaScript file for calculator functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <!-- Math.js library for mathematical operations
+         Better practice: Consider self-hosting critical libraries or using ES modules -->
+
+</body>
+
+</html>
