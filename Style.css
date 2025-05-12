@@ -1,4 +1,3 @@
-
 /* ### CSS Improvements:
 
 1. Replace viewport units (vw/vh) with rem units for more consistent scaling
@@ -9,113 +8,117 @@
  */
 
 
-*{
-    margin: 0;
-    /* Sets all margins to 0 - removes default spacing around elements
+* {
+   margin: 0;
+   /* Sets all margins to 0 - removes default spacing around elements
        Alternative for responsive: Could use rem units for specific margins where needed
        Other options: margin-top, margin-right, margin-bottom, margin-left for individual sides */
-    padding: 0;
-    /* Sets all padding to 0 - removes internal spacing within elements
+   padding: 0;
+   /* Sets all padding to 0 - removes internal spacing within elements
        Alternative for responsive: Could use rem/em units for padding to scale with font size
        Other options: padding-top, padding-right, padding-bottom, padding-left for individual sides */
-    box-sizing: border-box;
-    /* Makes width/height include padding and border, not just content
+   box-sizing: border-box;
+   /* Makes width/height include padding and border, not just content
        Alternative for responsive: This is already responsive-friendly
        Other options: content-box (default), inherit, initial */
 }
 
-body{
-    width: 100%;
-    /* Sets body width to 100% of viewport
+body {
+   width: 100%;
+   /* Sets body width to 100% of viewport
        Alternative for responsive: This is already responsive
        Other options: Fixed width (px), max-width to limit expansion on large screens */
-    height:100%;
-    /* Sets body height to 100% of parent (html)
+   height: 100%;
+   /* Sets body height to 100% of parent (html)
        Alternative for responsive: Use 100vh for full viewport height
        Other options: min-height: 100vh ensures full viewport coverage */
-    display: flex;
-    /* Uses flexbox layout for body content
+   display: flex;
+   /* Uses flexbox layout for body content
        Alternative for responsive: This is good for responsive design
        Other options: grid, block, inline-block depending on layout needs */
-    justify-content: center;
-    /* Centers content horizontally in the flex container
+   justify-content: center;
+   /* Centers content horizontally in the flex container
        Alternative for responsive: This is already responsive
        Other options: flex-start, flex-end, space-between, space-around, space-evenly */
-    align-items: center;
-    /* Centers content vertically in the flex container
+   align-items: center;
+   /* Centers content vertically in the flex container
        Alternative for responsive: This is already responsive
        Other options: flex-start, flex-end, stretch, baseline */
-      background-color: #d9d9d9;
+   background-color: #d9d9d9;
 
-      overflow-x: hidden;
+   overflow-x: hidden;
 
 
 
 }
 
-.container{
-    background-color: gray;
-    /* Sets background color to gray
+.container {
+
+   -webkit-box-shadow: 0px 0px 105px 45px rgba(115, 176, 106, 0.9);
+   -moz-box-shadow: 0px 0px 105px 45px rgba(115, 176, 106, 0.9);
+   box-shadow: 0px 0px 105px 45px rgba(164, 194, 164, 0.9);
+   background-color: gray;
+   /* Sets background color to gray
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    width: 60vw;
-    /* Sets width to 60% of viewport width
+   width: 60vw;
+   /* Sets width to 60% of viewport width
        Alternative for responsive: Use max-width with % or rem for better control
        Other options: Fixed width (px) or calc() for complex sizing */
-    height: 60vh;
-    /* Sets height to 60% of viewport height
+   height: 60vh;
+   /* Sets height to 60% of viewport height
        Alternative for responsive: Consider min-height for better content accommodation
        Other options: Fixed height (px) or auto to adapt to content */
-    padding: 1vh;
-    /* Sets padding to 1% of viewport height
+   padding: 1vh;
+   /* Sets padding to 1% of viewport height
        Alternative for responsive: Use rem units for consistent scaling
        Other options: em (relative to font size), px (fixed) */
-    gap: 2vh;
-    /* Sets gap between grid items to 2% of viewport height
+   gap: 2vh;
+   /* Sets gap between grid items to 2% of viewport height
        Alternative for responsive: Use rem units for consistent spacing
        Other options: px (fixed), % (relative to parent) */
-    display: grid;
-    /* Uses CSS Grid layout
+   display: grid;
+   /* Uses CSS Grid layout
        Alternative for responsive: This is good for responsive design
        Other options: flex, block depending on layout needs */
-    grid-template-columns: repeat(11, 1fr);
-    /* Creates 11 equal columns
+   grid-template-columns: repeat(11, 1fr);
+   /* Creates 11 equal columns
        Alternative for responsive: Use minmax() with auto-fit/auto-fill for responsive columns
        Other options: Specific sizes like px, %, mixed units */
-    margin-top: 20vh;
-    /* Sets top margin to 20% of viewport height
+   margin-top: 20vh;
+   /* Sets top margin to 20% of viewport height
        Alternative for responsive: Use rem units or % of parent
        Other options: margin property for all sides at once */
-    background-image: url(./back1.jpeg);
+   background-image: url(./back1.jpeg);
 
-    /* NOTE */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    /* Sets background image
+   /* NOTE */
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 100%;
+   /* Sets background image
        Alternative for responsive: Use multiple backgrounds with media queries
        Other options: background-color, gradients, or multiple layered backgrounds */
-       /* box-shadow: 5px 5px 10px; */
+   /* box-shadow: 5px 5px 10px; */
 
 
 }
 
-#Science{
-    background-image: url(../../back2.jpeg);
-    /* Sets background image for the element
+#Science {
+   background-image: url(../../back2.jpeg);
+   /* Sets background image for the element
        Alternative for responsive: Use different images at different breakpoints with media queries
        Other options: background-color, gradients */
-    background-size: cover;
-    /* Makes background image cover the entire element
+   background-size: cover;
+   /* Makes background image cover the entire element
        Alternative for responsive: This is already responsive
        Other options: contain, auto, specific dimensions */
-    background-clip: text;
-    /* Clips background to text area only
+   background-clip: text;
+   /* Clips background to text area only
        Alternative for responsive: This is already responsive
        Other options: border-box, padding-box, content-box */
-    color: transparent;
-    /* Makes text transparent to show background through it
+   color: transparent;
+   /* Makes text transparent to show background through it
        Alternative for responsive: This is already responsive
        Other options: Any color value, currentColor, inherit */
 }
@@ -125,158 +128,159 @@ body{
     height: 1vh;
 } */
 
-.fa-copy{
-    position: relative;
-    /* Positions element relative to its normal position
+.fa-copy {
+   position: relative;
+   /* Positions element relative to its normal position
        Alternative for responsive: This is already responsive
        Other options: absolute, fixed, sticky, static */
-    bottom: 0.6vh;
-    /* Moves element 0.6% of viewport height up from bottom
+   bottom: 0.6vh;
+   /* Moves element 0.6% of viewport height up from bottom
        Alternative for responsive: Use rem units for consistent positioning
        Other options: top, left, right for positioning */
-    font-size: 1.5vw;
-    /* Sets font size to 1.5% of viewport width
+   font-size: 1.5vw;
+   /* Sets font size to 1.5% of viewport width
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Other options: rem, em, px for different scaling behaviors */
-    background: linear-gradient(rgb(251, 247, 251), rgba(93, 91, 65, 0.167));
-    /* Creates a linear gradient background
+   background: linear-gradient(rgb(251, 247, 251), rgba(93, 91, 65, 0.167));
+   /* Creates a linear gradient background
        Alternative for responsive: This is already responsive
        Other options: radial-gradient, conic-gradient, solid colors */
-    background-clip: text;
-    /* Clips background to text area only
+   background-clip: text;
+   /* Clips background to text area only
        Alternative for responsive: This is already responsive
        Other options: border-box, padding-box, content-box */
-    color: transparent;
-    /* Makes text transparent to show background through it
+   color: transparent;
+   /* Makes text transparent to show background through it
        Alternative for responsive: This is already responsive
        Other options: Any color value, currentColor, inherit */
 }
 
-.fa-square{
-    position: relative;
-    /* Positions element relative to its normal position
+.fa-square {
+   position: relative;
+   /* Positions element relative to its normal position
        Alternative for responsive: This is already responsive
        Other options: absolute, fixed, sticky, static */
-    bottom: 0.6vh;
-    /* Moves element 0.6% of viewport height up from bottom
+   bottom: 0.6vh;
+   /* Moves element 0.6% of viewport height up from bottom
        Alternative for responsive: Use rem units for consistent positioning
        Other options: top, left, right for positioning */
-    font-size: 1.5vw;
-    /* Sets font size to 1.5% of viewport width
+   font-size: 1.5vw;
+   /* Sets font size to 1.5% of viewport width
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Other options: rem, em, px for different scaling behaviors */
-    background: linear-gradient(rgb(253, 253, 253), rgba(93, 91, 65, 0.167));
-    /* Creates a linear gradient background
+   background: linear-gradient(rgb(253, 253, 253), rgba(93, 91, 65, 0.167));
+   /* Creates a linear gradient background
        Alternative for responsive: This is already responsive
        Other options: radial-gradient, conic-gradient, solid colors */
-    background-clip: text;
-    /* Clips background to text area only
+   background-clip: text;
+   /* Clips background to text area only
        Alternative for responsive: This is already responsive
        Other options: border-box, padding-box, content-box */
-    color: transparent;
-    /* Makes text transparent to show background through it
+   color: transparent;
+   /* Makes text transparent to show background through it
        Alternative for responsive: This is already responsive
        Other options: Any color value, currentColor, inherit */
 }
-#back{
-    display: none;
-    /* Hides the element initially
+
+#back {
+   display: none;
+   /* Hides the element initially
        Alternative for responsive: Use media queries to show/hide based on screen size
        Other options: block, flex, grid, inline, inline-block */
-    position: absolute;
-    /* Positions element relative to nearest positioned ancestor
+   position: absolute;
+   /* Positions element relative to nearest positioned ancestor
        Alternative for responsive: Consider fixed or sticky for specific responsive behaviors
        Other options: relative, static, fixed, sticky */
-    top: 90vh;
-    /* Positions element 90% of viewport height from top
+   top: 90vh;
+   /* Positions element 90% of viewport height from top
        Alternative for responsive: Use calc() for complex positioning
        Other options: bottom, left, right for different sides */
-    left: 65vw;
-    /* Positions element 65% of viewport width from left
+   left: 65vw;
+   /* Positions element 65% of viewport width from left
        Alternative for responsive: Use % of parent or rem units
        Other options: right for positioning from right side */
-    width: 8vw;
-    /* Sets width to 8% of viewport width
+   width: 8vw;
+   /* Sets width to 8% of viewport width
        Alternative for responsive: Use min-width and max-width together
        Other options: %, rem, px for different scaling behaviors */
-    height: 8vh;
-    /* Sets height to 8% of viewport height
+   height: 8vh;
+   /* Sets height to 8% of viewport height
        Alternative for responsive: Use min-height or max-height for better control
        Other options: %, rem, px for different scaling behaviors */
-    border-radius: 4vh;
-    /* Rounds corners to 4% of viewport height
+   border-radius: 4vh;
+   /* Rounds corners to 4% of viewport height
        Alternative for responsive: Use rem units for consistent rounding
        Other options: % of element size, px for fixed rounding */
-    box-shadow: 2px 2px green
-    /* Adds shadow with 2px horizontal offset, 2px vertical offset, green color
+   box-shadow: 2px 2px green
+      /* Adds shadow with 2px horizontal offset, 2px vertical offset, green color
        Alternative for responsive: Use rem units for shadow size
        Other options: Add blur radius and spread radius parameters, multiple shadows */
 }
 
-.box{
-    background-color: white;
-    /* Sets background color to white
+.box {
+   background-color: white;
+   /* Sets background color to white
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    font-weight: 600;
-    /* Sets font weight to semi-bold
+   font-weight: 600;
+   /* Sets font weight to semi-bold
        Alternative for responsive: This is already responsive
        Other options: normal, bold, bolder, lighter, or numeric values (100-900) */
-    border: 1px solid gray;
-    /* Adds 1px solid gray border
+   border: 1px solid gray;
+   /* Adds 1px solid gray border
        Alternative for responsive: Use rem units for border width
        Other options: Individual properties (border-width, border-style, border-color) */
-    border-radius: 1vh;
-    /* Rounds corners to 1% of viewport height
+   border-radius: 1vh;
+   /* Rounds corners to 1% of viewport height
        Alternative for responsive: Use rem units for consistent rounding
        Other options: % of element size, px for fixed rounding */
-    display: flex;
-    /* Uses flexbox layout
+   display: flex;
+   /* Uses flexbox layout
        Alternative for responsive: This is good for responsive design
        Other options: grid, block, inline-block depending on layout needs */
-    justify-content: center;
-    /* Centers content horizontally
+   justify-content: center;
+   /* Centers content horizontally
        Alternative for responsive: This is already responsive
        Other options: flex-start, flex-end, space-between, space-around, space-evenly */
-    align-items: center;
-    /* Centers content vertically
+   align-items: center;
+   /* Centers content vertically
        Alternative for responsive: This is already responsive
        Other options: flex-start, flex-end, stretch, baseline */
-    text-align: center;
-    /* Centers text horizontally
+   text-align: center;
+   /* Centers text horizontally
        Alternative for responsive: This is already responsive
        Other options: left, right, justify */
-    cursor: pointer;
-    /* Changes cursor to pointer (hand) on hover
+   cursor: pointer;
+   /* Changes cursor to pointer (hand) on hover
        Alternative for responsive: This is already responsive
        Other options: default, text, not-allowed, grab, etc. */
-    box-shadow: 1px 3px  rgb(70, 65, 65);
-    /* Adds shadow with 1px horizontal offset, 3px vertical offset, dark gray color
+   box-shadow: 1px 3px rgb(70, 65, 65);
+   /* Adds shadow with 1px horizontal offset, 3px vertical offset, dark gray color
        Alternative for responsive: Use rem units for shadow size
        Other options: Add blur radius and spread radius parameters, multiple shadows */
-    user-select:none;
-    /* Prevents text selection
+   user-select: none;
+   /* Prevents text selection
        Alternative for responsive: This is already responsive
        Other options: auto, text, all, contain */
-    font-size: calc(0.1rem, 2vw, 2rem);
-    /* Attempts to use calc() for font sizing but syntax is incorrect
+   font-size: calc(0.1rem, 2vw, 2rem);
+   /* Attempts to use calc() for font sizing but syntax is incorrect
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Correct usage: font-size: clamp(0.1rem, 2vw, 2rem); */
 }
 
-.box sup{
-  vertical-align: super;
-  /* Aligns text as superscript
+.box sup {
+   vertical-align: super;
+   /* Aligns text as superscript
      Alternative for responsive: This is already responsive
      Other options: sub, baseline, top, middle, bottom */
-  font-size: 0.75em;
-  /* Sets font size to 75% of parent element's font size
+   font-size: 0.75em;
+   /* Sets font size to 75% of parent element's font size
      Alternative for responsive: This is already responsive
      Other options: rem, %, vw for different scaling behaviors */
 }
 
-.box1{
-   background-color:#336699;
+.box1 {
+   background-color: #336699;
    /* Sets background color to blue (#336699)
       Alternative for responsive: Use CSS variables for theming
       Other options: rgba(), hsla() for transparency, gradients */
@@ -322,7 +326,7 @@ body{
       Other options: Any valid box-shadow value */
 }
 
-.help{
+.help {
    display: flex;
    /* Uses flexbox layout
       Alternative for responsive: This is good for responsive design
@@ -337,34 +341,34 @@ body{
       Other options: center, flex-start, flex-end, space-between, space-around */
 }
 
-.help_child{
-    background-color: #56BFF5;
-    /* Sets background color to light blue (#56BFF5)
+.help_child {
+   background-color: #56BFF5;
+   /* Sets background color to light blue (#56BFF5)
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    text-align: center;
-    /* Centers text horizontally
+   text-align: center;
+   /* Centers text horizontally
        Alternative for responsive: This is already responsive
        Other options: left, right, justify */
-    font-size: 4vh;
-    /* Sets font size to 4% of viewport height
+   font-size: 4vh;
+   /* Sets font size to 4% of viewport height
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Other options: rem, em, px for different scaling behaviors */
-    border-radius: 1vh;
-    /* Rounds corners to 1% of viewport height
+   border-radius: 1vh;
+   /* Rounds corners to 1% of viewport height
        Alternative for responsive: Use rem units for consistent rounding
        Other options: % of element size, px for fixed rounding */
-    padding-left: 1vw;
-    /* Sets left padding to 1% of viewport width
+   padding-left: 1vw;
+   /* Sets left padding to 1% of viewport width
        Alternative for responsive: Use rem units for consistent padding
        Other options: em (relative to font size), px (fixed) */
-    padding-right: 1vw;
-    /* Sets right padding to 1% of viewport width
+   padding-right: 1vw;
+   /* Sets right padding to 1% of viewport width
        Alternative for responsive: Use rem units for consistent padding
        Other options: em (relative to font size), px (fixed) */
 }
 
-.box2{
+.box2 {
    grid-column: 1/12;
    /* Makes element span from column line 1 to 12 (full width)
       Alternative for responsive: Use grid-column: span X for flexible spanning
@@ -376,29 +380,29 @@ body{
 }
 
 .box2 input {
-    width: 100%;
-    /* Makes input fill its container
+   width: 100%;
+   /* Makes input fill its container
        Alternative for responsive: This is already responsive
        Other options: max-width to limit expansion, specific units (px, rem) */
-    height: 100%;
-    /* Makes input fill its container vertically
+   height: 100%;
+   /* Makes input fill its container vertically
        Alternative for responsive: This is already responsive
        Other options: min-height, max-height, specific units (px, rem) */
-    border: none;
-    /* Removes border
+   border: none;
+   /* Removes border
        Alternative for responsive: This is already responsive
        Other options: Any valid border value */
-    font-size: inherit;
-    /* Inherits font size from parent
+   font-size: inherit;
+   /* Inherits font size from parent
        Alternative for responsive: This is already responsive
        Other options: Specific units (rem, em, px, vw) */
-    border-radius: 1vh;
-    /* Rounds corners to 1% of viewport height
+   border-radius: 1vh;
+   /* Rounds corners to 1% of viewport height
        Alternative for responsive: Use rem units for consistent rounding
        Other options: % of element size, px for fixed rounding */
 }
 
-.box3{
+.box3 {
    grid-column: 1/12;
    /* Makes element span from column line 1 to 12 (full width)
       Alternative for responsive: Use grid-column: span X for flexible spanning
@@ -410,189 +414,194 @@ body{
 }
 
 .box3 input {
-    width: 100%;
-    /* Makes input fill its container
+   width: 100%;
+   /* Makes input fill its container
        Alternative for responsive: This is already responsive
        Other options: max-width to limit expansion, specific units (px, rem) */
-    height: 100%;
-    /* Makes input fill its container vertically
+   height: 100%;
+   /* Makes input fill its container vertically
        Alternative for responsive: This is already responsive
        Other options: min-height, max-height, specific units (px, rem) */
-    border: none;
-    /* Removes border
+   border: none;
+   /* Removes border
        Alternative for responsive: This is already responsive
        Other options: Any valid border value */
-    font-size: inherit;
-    /* Inherits font size from parent
+   font-size: inherit;
+   /* Inherits font size from parent
        Alternative for responsive: This is already responsive
        Other options: Specific units (rem, em, px, vw) */
-    border-radius: 1vh;
-    /* Rounds corners to 1% of viewport height
+   border-radius: 1vh;
+   /* Rounds corners to 1% of viewport height
        Alternative for responsive: Use rem units for consistent rounding
        Other options: % of element size, px for fixed rounding */
 }
 
-.inputbox{
-    background-color: gray;
-    /* Sets background color to gray
+.inputbox {
+   background-color: gray;
+   /* Sets background color to gray
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    box-shadow: none;
-    /* Removes box shadow
+   box-shadow: none;
+   /* Removes box shadow
        Alternative for responsive: This is already responsive
        Other options: Any valid box-shadow value */
 }
 
 .box5 {
-    grid-column: 7/8;
-    /* Makes element span from column line 7 to 8
+   grid-column: 7/8;
+   /* Makes element span from column line 7 to 8
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
 }
 
 .box6 {
-    grid-column: 8/9;
-    /* Makes element span from column line 8 to 9
+   grid-column: 8/9;
+   /* Makes element span from column line 8 to 9
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
 }
 
 .box7 {
-    grid-column: 9/10;
-    /* Makes element span from column line 9 to 10
+   grid-column: 9/10;
+   /* Makes element span from column line 9 to 10
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
 }
 
 .box8 {
-    grid-column: 10/11;
-    /* Makes element span from column line 10 to 11
+   grid-column: 10/11;
+   /* Makes element span from column line 10 to 11
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
 }
 
 .box9 {
-    grid-column: 11/12;
-    /* Makes element span from column line 11 to 12
+   grid-column: 11/12;
+   /* Makes element span from column line 11 to 12
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
 }
-.box16{
-    grid-column: 7/9;
-    /* Makes element span from column line 7 to 9
+
+.box16 {
+   grid-column: 7/9;
+   /* Makes element span from column line 7 to 9
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
-    background-color: #b31a1a;
-    /* Sets background color to red (#b31a1a)
+   background-color: #b31a1a;
+   /* Sets background color to red (#b31a1a)
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    color: white;
-    /* Sets text color to white
+   color: white;
+   /* Sets text color to white
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency */
-    font-size: 2vw;
-    /* Sets font size to 2% of viewport width
+   font-size: 2vw;
+   /* Sets font size to 2% of viewport width
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Other options: rem, em, px for different scaling behaviors */
-    box-shadow: 1px 2px rgb(122, 2, 2);
-    /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark red color
+   box-shadow: 1px 2px rgb(122, 2, 2);
+   /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark red color
        Alternative for responsive: Use rem units for shadow size
        Other options: Add blur radius and spread radius parameters, multiple shadows */
 }
-.box17{
-    background-color: #b31a1a;
-    /* Sets background color to red (#b31a1a)
+
+.box17 {
+   background-color: #b31a1a;
+   /* Sets background color to red (#b31a1a)
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    color: white;
-    /* Sets text color to white
+   color: white;
+   /* Sets text color to white
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency */
-    font-size: 2vw;
-    /* Sets font size to 2% of viewport width
+   font-size: 2vw;
+   /* Sets font size to 2% of viewport width
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Other options: rem, em, px for different scaling behaviors */
-    box-shadow: 1px 2px rgb(122, 2, 2);
-    /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark red color
+   box-shadow: 1px 2px rgb(122, 2, 2);
+   /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark red color
        Alternative for responsive: Use rem units for shadow size
        Other options: Add blur radius and spread radius parameters, multiple shadows */
 }
-.box18{
-    background-color: #b31a1a;
-    /* Sets background color to red (#b31a1a)
+
+.box18 {
+   background-color: #b31a1a;
+   /* Sets background color to red (#b31a1a)
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    color: white;
-    /* Sets text color to white
+   color: white;
+   /* Sets text color to white
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency */
-    font-size: 2vw;
-    /* Sets font size to 2% of viewport width
+   font-size: 2vw;
+   /* Sets font size to 2% of viewport width
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Other options: rem, em, px for different scaling behaviors */
-    box-shadow: 1px 2px rgb(122, 2, 2);
-    /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark red color
+   box-shadow: 1px 2px rgb(122, 2, 2);
+   /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark red color
        Alternative for responsive: Use rem units for shadow size
        Other options: Add blur radius and spread radius parameters, multiple shadows */
 }
 
 .box52 {
-    grid-row: 8/10;
-    /* Makes element span from row line 8 to 10
+   grid-row: 8/10;
+   /* Makes element span from row line 8 to 10
        Alternative for responsive: Use grid-row: span X for flexible spanning
        Other options: grid-row-start and grid-row-end separately */
-    grid-column: 11/12;
-    /* Makes element span from column line 11 to 12
+   grid-column: 11/12;
+   /* Makes element span from column line 11 to 12
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
-    background-color: rgb(11, 105, 11);
-    /* Sets background color to green
+   background-color: rgb(11, 105, 11);
+   /* Sets background color to green
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
-    box-shadow:1px 2px rgb(7, 79, 7);
-    /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark green color
+   box-shadow: 1px 2px rgb(7, 79, 7);
+   /* Adds shadow with 1px horizontal offset, 2px vertical offset, dark green color
        Alternative for responsive: Use rem units for shadow size
        Other options: Add blur radius and spread radius parameters, multiple shadows */
 }
-.box59{
-    grid-column: 7/9;
-    /* Makes element span from column line 7 to 9
+
+.box59 {
+   grid-column: 7/9;
+   /* Makes element span from column line 7 to 9
        Alternative for responsive: Use grid-column: span X for flexible spanning
        Other options: grid-column-start and grid-column-end separately */
 }
 
 
-#sorry{
+#sorry {
    display: none;
 }
+
 .box sup {
    vertical-align: super;
    font-size: 0.75em;
    line-height: 0;
    position: relative;
    top: -0.5em;
- }
+}
 
- .box sub {
+.box sub {
    vertical-align: sub;
    font-size: 0.75em;
    line-height: 0;
    position: relative;
    bottom: -0.25em;
- }
+}
 
 @media (max-width: 470px) {
-      #mainContainer{
-         display: none;
-      }
+   #mainContainer {
+      display: none;
+   }
 
-      #sorry{
-         display: flex;
-         margin-top: 15vh;
-         font-size: clamp(0.5rem, 8vh, 3rem);
-         background: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.233));
-         background-clip: text;
-         color: transparent;
-         margin-left: 5vw;
-      }
- }
+   #sorry {
+      display: flex;
+      margin-top: 15vh;
+      font-size: clamp(0.5rem, 8vh, 3rem);
+      background: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.233));
+      background-clip: text;
+      color: transparent;
+      margin-left: 5vw;
+   }
+}
