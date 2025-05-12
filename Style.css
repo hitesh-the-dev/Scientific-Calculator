@@ -587,7 +587,7 @@ body{
       #sorry{
          display: flex;
          margin-top: 30vh;
-         font-size: 10vh;
+         font-size: clamp(1.5rem, 10vh, 3rem);
          background: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.233));
          background-clip: text;
          color: transparent;
