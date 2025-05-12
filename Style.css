@@ -560,6 +560,9 @@ body{
 }
 
 
+#sorry{
+   display: none;
+}
 .box sup {
    vertical-align: super;
    font-size: 0.75em;
@@ -575,9 +578,19 @@ body{
    position: relative;
    bottom: -0.25em;
  }
- 
-@media (max-width: 600px) {
-   .fa-copy{
-     display: none;
-   }
+
+@media (max-width: 470px) {
+      #mainContainer{
+         display: none;
+      }
+
+      #sorry{
+         display: flex;
+         margin-top: 30vh;
+         font-size: 10vh;
+         background: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.233));
+         background-clip: text;
+         color: transparent;
+
+      }
  }
