@@ -575,16 +575,9 @@ body{
    position: relative;
    bottom: -0.25em;
  }
-
-
- /* #mainContainer{
-   position: relative;
-   right: 50px;
- } */
-
- /* @media (max-width: 600px) {
-   container {
-     background-image: none;
-
+ 
+@media (max-width: 600px) {
+   .fa-copy{
+     display: none;
    }
- } */
+ }
