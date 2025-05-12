@@ -47,6 +47,8 @@ body{
        Other options: flex-start, flex-end, stretch, baseline */
       background-color: #d9d9d9;
 
+      overflow-x: hidden;
+
 
 
 }
@@ -587,10 +589,10 @@ body{
       #sorry{
          display: flex;
          margin-top: 30vh;
-         font-size: clamp(1.5rem, 10vh, 3rem);
+         font-size: clamp(0.5rem, 8vh, 3rem);
          background: linear-gradient(rgba(0, 0, 0, 0.313), rgba(0, 0, 0, 0.233));
          background-clip: text;
          color: transparent;
-
+         margin-left: 5vw;
       }
  }
