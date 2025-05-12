@@ -85,6 +85,12 @@ body{
        Alternative for responsive: Use rem units or % of parent
        Other options: margin property for all sides at once */
     background-image: url(./back1.jpeg);
+
+    /* NOTE */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
     /* Sets background image
        Alternative for responsive: Use multiple backgrounds with media queries
        Other options: background-color, gradients, or multiple layered backgrounds */
@@ -569,3 +575,16 @@ body{
    position: relative;
    bottom: -0.25em;
  }
+
+
+ /* #mainContainer{
+   position: relative;
+   right: 50px;
+ } */
+
+ /* @media (max-width: 600px) {
+   container {
+     background-image: none;
+
+   }
+ } */
