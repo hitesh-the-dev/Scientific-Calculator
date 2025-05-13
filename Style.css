@@ -61,7 +61,13 @@ body {
    /* Sets background color to gray
        Alternative for responsive: Use CSS variables for theming
        Other options: rgba(), hsla() for transparency, gradients */
+
+   /* NOTE: */
    width: 60vw;
+   /* width: 100%;
+max-width: 60rem; */
+
+
    /* Sets width to 60% of viewport width
        Alternative for responsive: Use max-width with % or rem for better control
        Other options: Fixed width (px) or calc() for complex sizing */
@@ -209,6 +215,7 @@ body {
        Other options: %, rem, px for different scaling behaviors */
    border-radius: 4vh;
    /* Rounds corners to 4% of viewport height
+
        Alternative for responsive: Use rem units for consistent rounding
        Other options: % of element size, px for fixed rounding */
    box-shadow: 2px 2px green
@@ -262,22 +269,12 @@ body {
    /* Prevents text selection
        Alternative for responsive: This is already responsive
        Other options: auto, text, all, contain */
-   font-size: calc(0.1rem, 2vw, 2rem);
+   font-size: clamp(0.8rem, 1.5vw, 2rem);
    /* Attempts to use calc() for font sizing but syntax is incorrect
        Alternative for responsive: Use clamp(min, preferred, max) for responsive font sizing
        Correct usage: font-size: clamp(0.1rem, 2vw, 2rem); */
 }
 
-.box sup {
-   vertical-align: super;
-   /* Aligns text as superscript
-     Alternative for responsive: This is already responsive
-     Other options: sub, baseline, top, middle, bottom */
-   font-size: 0.75em;
-   /* Sets font size to 75% of parent element's font size
-     Alternative for responsive: This is already responsive
-     Other options: rem, %, vw for different scaling behaviors */
-}
 
 .box1 {
    background-color: #336699;
@@ -448,9 +445,11 @@ body {
 }
 
 .box5 {
+   /* NOTE: */
    grid-column: 7/8;
    /* Makes element span from column line 7 to 8
        Alternative for responsive: Use grid-column: span X for flexible spanning
+
        Other options: grid-column-start and grid-column-end separately */
 }
 
@@ -544,9 +543,11 @@ body {
 }
 
 .box52 {
+   /* NOTE: */
    grid-row: 8/10;
    /* Makes element span from row line 8 to 10
        Alternative for responsive: Use grid-row: span X for flexible spanning
+
        Other options: grid-row-start and grid-row-end separately */
    grid-column: 11/12;
    /* Makes element span from column line 11 to 12

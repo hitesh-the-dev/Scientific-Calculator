@@ -40,6 +40,29 @@ help[0].addEventListener("click", () => {
   // Better approach: Use classList.toggle for toggling visibility
   // Example: helpText.classList.toggle('visible');
 
+
+  // NOTE:
+//   ✅ Better Approach Using classList.toggle:
+// Instead of directly changing the display, you can define a CSS class like this:
+
+// .visible {
+//   display: block;
+// }
+// And then use JavaScript:
+
+// helpText.classList.toggle('visible');
+  // This does the following:
+
+// If helpText has the visible class, it removes it (hides the element).
+
+// If helpText doesn't have the visible class, it adds it (shows the element).
+
+  // This is cleaner and reusable.
+
+  // NOTE: till now
+
+
+
   calculator[0].style.display = "none";
   // Hides the calculator by changing display to "none"
   // Better approach: Use classList.toggle for toggling visibility
@@ -50,6 +73,36 @@ help[0].addEventListener("click", () => {
   back.style.left = "50vw";
   // Positions the back button 50% from the left of viewport
   // Better approach: Use CSS classes instead of inline styles
+
+//  NOTE:
+  // Problem With Inline Styles in JavaScript:
+  // It mixes logic (JS) with presentation (CSS).
+
+  // It's harder to manage styles, especially in large projects.
+
+  // It's less reusable — you can't apply it to multiple elements easily.
+
+  // ✅ Better Approach: Use CSS Classes
+  // Instead of setting the style via JavaScript like this:
+
+
+  // back.style.left = "50vw";
+  // You define a CSS class:
+
+
+  // .center-left {
+  //   left: 50vw;
+  //   position: absolute; /* or relative/fixed as required */
+  // }
+  // Then in JavaScript, you apply the class:
+
+
+  // back.classList.add("center-left");
+  // Or if you're toggling:
+
+  // back.classList.toggle("center-left");
+  // NOTE: till now
+
 
   back.style.top = "90vh";
   // Positions the back button 90% from the top of viewport
@@ -70,6 +123,7 @@ help[0].addEventListener("click", () => {
     // Hides the back button
   });
 });
+
 
 // CUT SECTION
 let cut = document.getElementById("cut");
