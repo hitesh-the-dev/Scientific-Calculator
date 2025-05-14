@@ -108,20 +108,39 @@ help[0].addEventListener("click", () => {
   // Positions the back button 90% from the top of viewport
   // Better approach: Use CSS classes instead of inline styles
 
-  back.addEventListener("click", () => {
-    // Adds click event listener to the back button
-    // Issue: This creates a new event listener every time help is clicked
-    // Better approach: Define the event handler outside and use removeEventListener
 
-    helpText.style.display = "none";
-    // Hides the help text
+});
+// NOTE: 💣 So what’s the problem?
+// Imagine this:
 
-    calculator[0].style.display = "grid";
-    // Shows the calculator with grid display
+// help.addEventListener("click", () => {
+//   back.addEventListener("click", () => {
+//     console.log("Back clicked");
+//   });
+// });
+// If the user clicks the help button three times, this code runs three times, and the back button now has three click listeners.
 
-    back.style.display = "none";
-    // Hides the back button
-  });
+// When the user finally clicks back, the message "Back clicked" logs three times — because three separate functions are listening.
+
+back.addEventListener("click", () => {
+  // Adds click event listener to the back button
+  // Issue: This creates a new event listener every time help is clicked
+  // Better approach: Define the event handler outside and use removeEventListener
+
+  helpText.style.display = "none";
+  // Hides the help text
+
+  console.log("Hello");
+
+  calculator[0].style.display = "grid";
+  // Shows the calculator with grid display
+
+  back.style.display = "none";
+  // Hides the back button
+
+  console.log(document.body.style.width);
+
+
 });
 
 
@@ -144,17 +163,6 @@ cut.addEventListener("click", () => {
   back.style.left = "45vw";
   // Positions the back button 45% from the left of viewport
 
-  back.addEventListener("click", () => {
-    // Adds click event listener to the back button
-    // Issue: This creates a new event listener every time cut is clicked
-    // Better approach: Define the event handler outside and use removeEventListener
-
-    calculator[0].style.display = "grid";
-    // Shows the calculator with grid display
-
-    back.style.display = "none";
-    // Hides the back button
-  });
 });
 
 // MINIMISE SECTION
@@ -197,10 +205,69 @@ minimise.addEventListener("click", (e) => {
   }
 });
 
+// NOTE: start from here
+
 if (document.body.style.width <= "1000px") {
   // Checks if body width is less than or equal to 1000px
   // Issue: This will almost always be false as document.body.style.width is empty by default
   // Better approach: Use window.innerWidth or media queries in CSS
+
+  back.style.right = "60vw";
+  // Positions the back button 60% from the right of viewport
+}if (document.body.style.width <= "1000px") {
+  // Checks if body width is less than or equal to 1000px
+  // Issue: This will almost always be false as document.body.style.width is empty by default
+  // Better approach: Use window.innerWidth or media queries in CSS
+
+
+  // NOTE: ❓ What’s this code trying to do?
+
+  // if (document.body.style.width <= "1000px") {
+  //   back.style.right = "60vw";
+  // }
+  // It's trying to check if the width of the page is ≤ 1000px and, if so, apply a new CSS style to the back button.
+
+  // 🛑 What’s the issue?
+  // The problem is here:
+
+
+  // document.body.style.width
+  // This checks the inline style of the <body> element — that is, only the value set in JavaScript or via the style attribute like:
+
+
+  // <body style="width: 1200px">
+  // If no such inline style exists (which is usually the case), then:
+
+
+  // document.body.style.width  // returns ""
+  // So the condition becomes:
+
+
+  // "" <= "1000px"
+  // Which is a string comparison and always gives an incorrect or unexpected result.
+
+  // ✅ Correct Way (Option 1: Use window.innerWidth)
+  // Instead, use:
+
+
+  // if (window.innerWidth <= 1000) {
+  //   back.style.right = "60vw";
+  // }
+  // window.innerWidth gives the actual width of the viewport in pixels.
+
+  // This is the reliable way to check screen width in JavaScript.
+
+  // ✅ Correct Way (Option 2: Use CSS Media Queries)
+  // If you're trying to apply styles based on screen size, CSS is the cleaner way:
+
+  // @media (max-width: 1000px) {
+  //   #back {
+  //     right: 60vw;
+  //   }
+  // }
+  // This avoids using JavaScript entirely for layout logic.
+
+
 
   back.style.right = "60vw";
   // Positions the back button 60% from the right of viewport
